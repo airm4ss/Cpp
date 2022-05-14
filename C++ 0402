@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+class Shape
+{
+	string NAME;
+	int A;  //가로1
+	int B;  //세로
+	int C;  //가로2
+
+public:
+	Shape(int a, int b, int c = 0)
+	{
+		A = a;
+		B = b;
+		C = c;
+	}
+
+	int getA(int a) {
+		A = a;
+		return A;
+	}
+	int getB(int b) {
+		B = b;
+		return B;
+	}
+	int getC(int c) {
+		C = c;
+		return C;
+	}
+
+	double AreaOval() //타원 넓이 출력 함수
+	{
+		double AreaOval = A * B * 3.14;
+		cout << "타원의 넓이는" << AreaOval << "이다" << endl;
+		NAME = "CircleA";
+		return 0;
+	}
+	int AreaLadder()  //사다리꼴 넓이 출력 함수
+	{
+		int AreaLadder = (A + B)*C/2;
+		cout << "사다리꼴의 넓이는" << AreaLadder << "이다" << endl;
+		NAME = "Rectangular";
+		return 0;
+	}
+	int AreaRect()  //사각형 넓이 출력 함수
+	{
+		int AreaRect = A * B;
+		cout << "사각형의 넓이는" << AreaRect << "이다" << endl;
+		NAME = "Ladder";
+		return 0;
+	}
+	
+	void setTwo(int a, int b)  //타원의 A,B나 사각형의 A, B를 설정해주는 함수
+	{
+		A = a;
+		B = b;
+	}
+	void setThree(int a, int b, int c)  //사다리꼴의 A, B, C 길이를 설정해주는 함수
+	{
+		A = a;
+		B = b;
+		C = c;
+	}
+	~Shape() {
+		cout << "Shape 소멸 " << NAME << "클래스" << endl;
+	}
+};
+
+
+int main()
+{
+	Shape a(2,2);
+	a.setTwo(2,2);
+	a.AreaOval();
+
+	Shape b(10,20);
+	b.setTwo(10, 20);
+	b.AreaRect();
+
+	Shape c(3,7,4);
+	c.setThree(5,7,4);
+	c.AreaLadder();
+	c.setThree(5, 10, 6);
+	c.AreaLadder();
+	
+	return 0;
+}
