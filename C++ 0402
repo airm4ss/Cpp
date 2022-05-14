@@ -16,36 +16,36 @@ public:
 		C = c;
 	}
 
-	int getA(int a) {
+	int getA(int a) {  //A값 리턴
 		A = a;
 		return A;
 	}
-	int getB(int b) {
+	int getB(int b) {  //B값 리턴
 		B = b;
 		return B;
 	}
-	int getC(int c) {
+	int getC(int c) {  //C값 리턴
 		C = c;
 		return C;
 	}
 
 	double AreaOval() //타원 넓이 출력 함수
 	{
-		double AreaOval = A * B * 3.14;
+		double AreaOval = A * B * 3.14;  //(타원 넓이)=(가로)*(세로)*(파이)
 		cout << "타원의 넓이는" << AreaOval << "이다" << endl;
 		NAME = "CircleA";
 		return 0;
 	}
 	int AreaLadder()  //사다리꼴 넓이 출력 함수
 	{
-		int AreaLadder = (A + B)*C/2;
+		int AreaLadder = (A + B)*C/2;  //(사다리꼴 넓이)={(윗변)+(아랫변)}*(높이)/2
 		cout << "사다리꼴의 넓이는" << AreaLadder << "이다" << endl;
 		NAME = "Rectangular";
 		return 0;
 	}
 	int AreaRect()  //사각형 넓이 출력 함수
 	{
-		int AreaRect = A * B;
+		int AreaRect = A * B;  //(사각형 넓이)=(가로)*(세로)
 		cout << "사각형의 넓이는" << AreaRect << "이다" << endl;
 		NAME = "Ladder";
 		return 0;
