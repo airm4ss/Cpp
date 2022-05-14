@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Box
+{
+	char foo;
+	int width;
+	int height;
+
+public:
+	Box(int w, int h)  //매개변수로 사각형의 가로, 세로 int형 두 개 값을 받음
+	{
+		width = w;
+		height = h;
+	}
+	char setFil(char f='*')   //문자 세팅 함수
+	{
+		foo = f;
+		return 0;
+	}
+	int setSize(int w, int h)  //사각형 크기 세팅 함수
+	{
+		width = w;
+		height = h;
+
+		return 0;
+	}
+
+	void draw()  //사각형 출력 함수
+	{
+		for (int i = 0;i < height;i++) {
+			for (int i = 0;i < width;i++) {
+				cout << foo;
+			}
+			cout << endl;
+		}
+	}
+};
+
+int main()
+{
+	Box box1(3,4);
+	box1.setFil();
+	box1.setSize(3, 4);
+	box1.draw();
+
+	cout << endl << endl;
+
+	Box box2(6,10);
+	box2.setFil('^');
+	box2.setSize(6,10);
+	box2.draw();
+
+	return 0;
+}
