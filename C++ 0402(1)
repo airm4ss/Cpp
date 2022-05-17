@@ -10,8 +10,11 @@ private:
 	int C;  //가로2
 
 public:
-	Shape()
+	Shape(int a=0,int b=0,int c=0)
 	{
+		A = a;
+		B = b;
+		C = c;
 	}
 
 	int getA(int a) {  //A값 리턴
@@ -74,13 +77,13 @@ int main()
 	a.setTwo(1,5);
 	a.AreaOval();
 
-	Shape b;
+	Shape b(10,20);
 	b.getA(10);
 	b.getB(20);
 	b.setTwo(10, 20);
 	b.AreaRect();
 
-	Shape c;
+	Shape c(3,7,4);
 	c.getA(5);
 	c.getB(7);
 	c.getC(4);
