@@ -3,6 +3,7 @@ using namespace std;
 
 class Shape
 {
+private:
 	string NAME;
 	int A;  //가로1
 	int B;  //세로
@@ -36,17 +37,17 @@ public:
 		NAME = "CircleA";
 		return 0;
 	}
-	int AreaLadder()  //사다리꼴 넓이 출력 함수
-	{
-		int AreaLadder = (A + B)*C/2;  //(사다리꼴 넓이)={(윗변)+(아랫변)}*(높이)/2
-		cout << "사다리꼴의 넓이는" << AreaLadder << "이다" << endl;
-		NAME = "Rectangular";
-		return 0;
-	}
 	int AreaRect()  //사각형 넓이 출력 함수
 	{
 		int AreaRect = A * B;  //(사각형 넓이)=(가로)*(세로)
 		cout << "사각형의 넓이는" << AreaRect << "이다" << endl;
+		NAME = "Rectangular";
+		return 0;
+	}
+	int AreaLadder()  //사다리꼴 넓이 출력 함수
+	{
+		int AreaLadder = (A + B) * C / 2;  //(사다리꼴 넓이)={(윗변)+(아랫변)}*(높이)/2
+		cout << "사다리꼴의 넓이는" << AreaLadder << "이다" << endl;
 		NAME = "Ladder";
 		return 0;
 	}
