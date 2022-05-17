@@ -1,0 +1,97 @@
+#include <iostream>
+using namespace std;
+
+class Shape
+{
+private:
+	string NAME;
+	int A;  //가로1
+	int B;  //세로
+	int C;  //가로2
+
+public:
+	Shape()
+	{
+	}
+
+	int getA(int a) {  //A값 리턴
+		A = a;
+		return A;
+	}
+	int getB(int b) {  //B값 리턴
+		B = b;
+		return B;
+	}
+	int getC(int c) {  //C값 리턴
+		C = c;
+		return C;
+	}
+
+	double AreaOval() //타원 넓이 출력 함수
+	{
+		double AreaOval = A * B * 3.14;  //(타원 넓이)=(가로)*(세로)*(파이)
+		cout << "타원의 넓이는" << AreaOval << "이다" << endl;
+		NAME = "CircleA";
+		return 0;
+	}
+	int AreaRect()  //사각형 넓이 출력 함수
+	{
+		int AreaRect = A * B;  //(사각형 넓이)=(가로)*(세로)
+		cout << "사각형의 넓이는" << AreaRect << "이다" << endl;
+		NAME = "Rectangular";
+		return 0;
+	}
+	int AreaLadder()  //사다리꼴 넓이 출력 함수
+	{
+		int AreaLadder = (A + B) * C / 2;  //(사다리꼴 넓이)={(윗변)+(아랫변)}*(높이)/2
+		cout << "사다리꼴의 넓이는" << AreaLadder << "이다" << endl;
+		NAME = "Ladder";
+		return 0;
+	}
+	
+	void setTwo(int a, int b)  //타원의 A,B나 사각형의 A, B를 설정해주는 함수
+	{
+		A = a;
+		B = b;
+	}
+	void setThree(int a, int b, int c)  //사다리꼴의 A, B, C 길이를 설정해주는 함수
+	{
+		A = a;
+		B = b;
+		C = c;
+	}
+	~Shape() {
+		cout << "Shape 소멸 " << NAME << "클래스" << endl;
+	}
+};
+
+
+int main()
+{
+	Shape a;
+	a.getA(1);
+	a.getB(5);
+	a.setTwo(1,5);
+	a.AreaOval();
+
+	Shape b;
+	b.getA(10);
+	b.getB(20);
+	b.setTwo(10, 20);
+	b.AreaRect();
+
+	Shape c;
+	c.getA(5);
+	c.getB(7);
+	c.getC(4);
+	c.setThree(5,7,4);
+	c.AreaLadder();
+
+	c.getA(5);
+	c.getB(10);
+	c.getC(6);
+	c.setThree(5, 10, 6);
+	c.AreaLadder();
+	
+	return 0;
+}
