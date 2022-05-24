@@ -1,31 +1,31 @@
 #include <iostream>
 using namespace std;
 
-string getName(string Name) {
+string getName(string Name) {  //이름 리턴
 	return Name;
 }
-string getID(string ID) {
+string getID(string ID) {  //아이디 리턴
 	return ID;
 }
-int getPassword(int Password) {
+int getPassword(int Password) {  //비밀번호 리턴
 	return Password;
 }
 
-string SetName() {
+string SetName() {  //이름 받기
 	string Name;
 	cout << "이름: ";
 	cin >> Name;
 
 	return Name;
 }
-string SetID() {
+string SetID() {  //아이디 받기
 	string ID;
 	cout << "아이디: ";
 	cin >> ID;
 
 	return ID;
 }
-int SetPassword(){
+int SetPassword(){  //패스워드 받기
 	int Password;
 	cout << "비밀번호: ";
 	cin >> Password;
@@ -36,7 +36,7 @@ int SetPassword(){
 class Member  //로그인 구현 코드
 {
 public:
-	void login(string Name,string ID,int Password) {
+	void login(string Name,string ID,int Password) {  //로그인 받는 함수
 		cout << "아이디: ";
 		string id;
 		cin >> id;
@@ -64,7 +64,7 @@ public:
 
 	}
 
-	int bag_course()
+	int bag_course()  //학수 번호 입력 받기
 	{
 		cout << "추가할 학수 번호 >> ";
 		int number;
@@ -79,7 +79,7 @@ int main()
 	string Name, ID;
 	int Password;
 
-	while (1) {
+	while (1) {  //while 무한반복을 하고 로그인을 선택하면 반복문 break
 		cout << "------------------ 서울여자대학교 종합정보시스템 ------------------" << endl;
 		cout << "1. 회원가입" << endl;
 		cout << "2. 로그인" << endl << endl;
@@ -100,24 +100,24 @@ int main()
 		{
 			Member user;
 			user.login(Name, ID, Password);
-			break;
+			break;  //반복문 탈출
 		}
 		else
 			cout << "1 또는 2만 입력해주세요" << endl << endl;
 	}
 
-	while (1) {
+	while (1) {  //메인 화면
 		cout << "========================" << endl;
 		cout << "1. 장바구니" << endl;
-		cout<<"2. 강의 담기"<<endl;
-		cout<<"3. 수강신청"<<endl;
+		cout << "2. 강의 담기" << endl;
+		cout << "3. 수강신청" << endl;
 		cout << "4. 로그아웃" << endl;
 		cout << "번호를 입력하세요: ";
 		int input;
 		cin >> input;
 		cout << endl;
 
-		if (input == 1)
+		if (input == 1)  //수강과목명
 		{
 			string lesson[3] = { {"[1]c++ 프로그래밍 >> 0001"},{"[2]linux 프로그래밍 >> 0002"},{"[3]리버싱 >> 0003"} };
 			int i;
@@ -126,14 +126,14 @@ int main()
 			}
 			cout << endl;
 		}
-		else if (input == 2)
+		else if (input == 2)  //학수번호 입력받기
 		{
 			int number;
 			Cart n;
-			number=n.bag_course();
+			number = n.bag_course();
 		}
 
-		else if (input == 4)
+		else if (input == 4)  //로그아웃
 		{
 			cout << "---------------- 로그아웃 ----------------" << endl;
 			cout << "로그아웃 되었습니다. 안녕히 가세요." << endl;
