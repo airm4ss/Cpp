@@ -1,0 +1,144 @@
+#include <iostream>
+using namespace std;
+
+string getName(string Name) {
+	return Name;
+}
+string getID(string ID) {
+	return ID;
+}
+int getPassword(int Password) {
+	return Password;
+}
+
+string SetName() {
+	string Name;
+	cout << "이름: ";
+	cin >> Name;
+
+	return Name;
+}
+string SetID() {
+	string ID;
+	cout << "아이디: ";
+	cin >> ID;
+
+	return ID;
+}
+int SetPassword(){
+	int Password;
+	cout << "비밀번호: ";
+	cin >> Password;
+
+	return Password;
+}
+
+class Member  //로그인 구현 코드
+{
+public:
+	void login(string Name,string ID,int Password) {
+		cout << "아이디: ";
+		string id;
+		cin >> id;
+
+		cout << "비밀번호: ";
+		int pw;
+		cin >> pw;
+
+		if (ID == id && Password == pw)
+		{
+			cout << "=== 로그인 성공 ===" << endl << endl;
+			cout << Name << "님 환영합니다" << endl << endl;
+		}
+		else
+			cout << "아이디 혹은 비밀번호가 틀렸습니다" << endl << endl;
+	}
+
+};
+
+class Cart
+{
+public:
+	void print()
+	{
+
+	}
+
+	int bag_course()
+	{
+		cout << "추가할 학수 번호 >> ";
+		int number;
+		cin >> number;
+
+		return number;
+	}
+};
+
+int main()
+{
+	string Name, ID;
+	int Password;
+
+	while (1) {
+		cout << "------------------ 서울여자대학교 종합정보시스템 ------------------" << endl;
+		cout << "1. 회원가입" << endl;
+		cout << "2. 로그인" << endl << endl;
+		cout << "번호를 입력하세요 >> ";
+		int input;
+		cin >> input;
+		cout << "-------------------------------------------------------------------" << endl;
+
+		if (input == 1)
+		{
+			Name = SetName();
+			ID = SetID();
+			Password = SetPassword();
+
+			cout << "=== 회원가입 성공 ===" << endl << endl;
+		}
+		else if (input == 2)
+		{
+			Member user;
+			user.login(Name, ID, Password);
+			break;
+		}
+		else
+			cout << "1 또는 2만 입력해주세요" << endl << endl;
+	}
+
+	while (1) {
+		cout << "========================" << endl;
+		cout << "1. 장바구니" << endl;
+		cout<<"2. 강의 담기"<<endl;
+		cout<<"3. 수강신청"<<endl;
+		cout << "4. 로그아웃" << endl;
+		cout << "번호를 입력하세요: ";
+		int input;
+		cin >> input;
+		cout << endl;
+
+		if (input == 1)
+		{
+			string lesson[3] = { {"[1]c++ 프로그래밍 >> 0001"},{"[2]linux 프로그래밍 >> 0002"},{"[3]리버싱 >> 0003"} };
+			int i;
+			for (i = 0;i < 3;i++) {
+				cout << lesson[i] << endl;
+			}
+			cout << endl;
+		}
+		else if (input == 2)
+		{
+			int number;
+			Cart n;
+			number=n.bag_course();
+		}
+
+		else if (input == 4)
+		{
+			cout << "---------------- 로그아웃 ----------------" << endl;
+			cout << "로그아웃 되었습니다. 안녕히 가세요." << endl;
+			break;
+		}
+	}
+
+}
