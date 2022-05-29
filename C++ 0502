@@ -59,7 +59,7 @@ public:
 class Cart
 {
 public:
-	void print()
+	void print()  //수강과목 출력
 	{
 		string lesson[3] = { {"[1]c++ 프로그래밍 >> 0001"},{"[2]linux 프로그래밍 >> 0002"},{"[3]리버싱 >> 0003"} };
 		int i;
@@ -133,7 +133,7 @@ int main()
 		cin >> input;
 		cout << endl;
 
-		if (input == 1)  //수강과목명
+		if (input == 1)  //수강 과목명 출력
 		{
 			Cart l;
 			l.print();
@@ -149,13 +149,13 @@ int main()
 
 			for (int i = 0; i < 3; i++)
 			{
-				if (bag[i] == " ") {
+				if (bag[i] == " ") {  //공백이 있는 경우에 과목을 집어 넣도록 설정해서 순서대로 차곡차곡 쌓이게 했다
 						bag[i] = lesson[number-1];
 						break;
 				}
 			}
 
-			cout << "========= My 장바구니 =========" << endl;
+			cout << "========= My 장바구니 =========" << endl;  //장바구니 출력
 			cout << "1. " << bag[0] << endl;
 			cout << "2. " << bag[1] << endl;
 			cout << "3. " << bag[2] << endl << endl;
@@ -168,5 +168,4 @@ int main()
 			break;
 		}
 	}
-
 }
