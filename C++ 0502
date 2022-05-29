@@ -25,7 +25,7 @@ string SetID() {  //아이디 받기
 
 	return ID;
 }
-int SetPassword(){  //패스워드 받기
+int SetPassword() {  //패스워드 받기
 	int Password;
 	cout << "비밀번호: ";
 	cin >> Password;
@@ -36,7 +36,7 @@ int SetPassword(){  //패스워드 받기
 class Member  //로그인 구현 코드
 {
 public:
-	void login(string Name,string ID,int Password) {  //로그인 받는 함수
+	void login(string Name, string ID, int Password) {  //로그인 받는 함수
 		cout << "아이디: ";
 		string id;
 		cin >> id;
@@ -142,19 +142,18 @@ int main()
 		{
 			Cart n;
 			number = n.bag_course();
-		}
-
-		else if (input == 3)  //수강 신청 확인
-		{
 
 			for (int i = 0; i < 3; i++)
 			{
 				if (bag[i] == " ") {  //공백이 있는 경우에 과목을 집어 넣도록 설정해서 순서대로 차곡차곡 쌓이게 했다
-						bag[i] = lesson[number-1];
-						break;
+					bag[i] = lesson[number - 1];
+					break;
 				}
 			}
+		}
 
+		else if (input == 3)  //수강 신청 확인
+		{
 			cout << "========= My 장바구니 =========" << endl;  //장바구니 출력
 			cout << "1. " << bag[0] << endl;
 			cout << "2. " << bag[1] << endl;
