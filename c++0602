@@ -17,7 +17,7 @@ public:
 		this->age = age;
 		strcpy(this->job, job);
 	}
-	~GameCharacter();
+	~GameCharacter();  //캐릭터 출력하기
 	void show() {
 		cout << "******캐릭터 정보*******" << endl;
 		cout << "캐릭터 이름: " << name << endl;
@@ -52,7 +52,7 @@ GameCharacter::GameCharacter(const GameCharacter& c) {  //깊은 복사 생성�
 	strcpy(this->job, c.job);
 }
 
-GameCharacter::~GameCharacter() {
+GameCharacter::~GameCharacter() {  //소멸자 구현
 	delete[]name, job;
 }
 
@@ -62,9 +62,7 @@ int main()
 	int i_age;
 	char name2[30], job2[30];
 	int age2;
-	while (1) {
-
-
+	while (1) {    //while(1)로 무한루프를 사용해서 입력값이 5(종료)가 아닌 이상 무한 반복
 		cout << endl << "========캐릭터 관리========" << endl;
 		cout << "1. 캐릭터 생성" << endl;
 		cout << "2. 캐릭터 복사" << endl;
@@ -80,7 +78,7 @@ int main()
 			cout << "생성할 캐릭터의 이름, 나이, 직업을 순서대로 입력해주세요.(공백으로 구분)" << endl;
 			cout << "참고사항: 직업의 종류는 자유롭게!" << endl;
 			cout << "--> ";
-			cin >> i_name >> i_age >> i_job;
+			cin >> i_name >> i_age >> i_job; //cin은 공백으로 문자 구분
 			cout << "캐릭터가 생성되었습니다." << endl;
 		}
 		GameCharacter person(i_name, i_age, i_job); //person 객체-일반 생성자 호출
@@ -104,13 +102,13 @@ int main()
 			if (num == 1) {
 				cout << "--> ";
 				cin >> name2 >> age2 >>job2;
-				person.revise(name2, age2, job2);
+				person.revise(name2, age2, job2);  //입력 받은 값으로 캐릭터 수정하기
 				cout << "정상적으로 수정되었습니다." << endl;
 			}
 			if (num == 2) {
 				cout << "--> ";
 				cin >> name2 >> age2 >> job2;
-				copy.revise(name2, age2, job2);
+				copy.revise(name2, age2, job2);  //입력 받은 값으로 복사된 캐릭터 수정하기
 				cout << "정상적으로 수정되었습니다." << endl;
 			}
 
