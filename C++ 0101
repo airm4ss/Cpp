@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;          //std::를 생략할 수 있게 해준다.
+int main() {                 //C++프로그램의 실행 시작점이다.
+
+	cout << "당신의 이름은 무엇입니까 ? ";
+	//cout은 '<<'명령어로 뒤에 작성한 피연산자를 출력한다.
+	char name0[11];
+	cin.getline(name0, 11, '\n');
+	//cin.getlin()은 공백을 포함한 문자열을 입력 받을 수 있도록 해준다.
+	//연산자가 공백문자를 만나면 이전에 입력된 문자들을 모두 하나의 문자열로 인식하기 때문에 원하는 결과가 나오지 않는다.
+	cout << "반갑습니다." << name0 << "님\n\n";        //\n은 엔터 한 번, \n\n은 엔터 두 번 친 것과 같다.
+
+	cout << "----------SWING 30------------" << endl;
+    cout << "음료의 가격 입력을 시작합니다.\n\n";
+
+	//변수 정의
+	int coke;
+	int samdasoo;
+	int hwanta;
+	
+	int count_c;
+	int count_s;
+	int count_h;
+
+	cout << "콜라의 가격 : ";
+	cin >> coke;
+	cout << "삼다수의 가격 : ";
+	cin >> samdasoo;
+	cout << "환타의 가격 : ";
+	cin >> hwanta;
+	cout << " \n";
+
+	cout << "개수를 입력해주세요.\n\n";
+
+	cout << "콜라 수량 : ";
+	cin >> count_c;
+
+	cout << "삼다수 수량 : ";
+	cin >> count_s;
+
+	cout << "환타 수량 : ";
+	cin >> count_h;
+
+	cout << "-------------------------------\n";
+	int price;
+
+	price = coke * count_c + samdasoo * count_s + hwanta * count_h;
+	/*
+	+: 더하기
+	-: 빼기
+	/: 나누기
+	*/
+	cout << "500원을 할인받아 총" << price-500 << "원 입니다." << endl;
+}
