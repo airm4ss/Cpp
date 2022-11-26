@@ -29,7 +29,7 @@ int main() {
 
 	for (int i = 0; i < 5; i++) {  //배열A 출력
 		for (int j = 0; j < 5; j++)
-			cout << "  " << A[i][j];
+			cout << A[i][j] <<"\t";
 		cout << endl;
 	}
 }
